@@ -1,0 +1,528 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Documentació API Swagger de plaques fotovoltaiques",
+        "description": "Descripció",
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "http://127.0.0.1:8000/"
+        }
+    ],
+    "paths": {
+        "/api/plaques": {
+            "get": {
+                "tags": [
+                    "Plaques"
+                ],
+                "summary": "Llistat dels registres de totes les plaques fotovoltaiques",
+                "operationId": "b1e63929653781074d11266e1713dee6",
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "rows": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "number",
+                                                        "example": "1"
+                                                    },
+                                                    "latitud": {
+                                                        "type": "number",
+                                                        "format": "float",
+                                                        "example": "14.3"
+                                                    },
+                                                    "longitud": {
+                                                        "type": "number",
+                                                        "format": "float",
+                                                        "example": "2.09"
+                                                    },
+                                                    "nom": {
+                                                        "type": "string",
+                                                        "example": "IES Ernest Lluch"
+                                                    },
+                                                    "tipus_equipament": {
+                                                        "type": "string",
+                                                        "example": "Educació"
+                                                    },
+                                                    "adreca": {
+                                                        "type": "string",
+                                                        "example": "Carrer de la Diputació, 11-15"
+                                                    },
+                                                    "nom_barri": {
+                                                        "type": "string",
+                                                        "example": "la Nova Esquerra de l'Eixample"
+                                                    },
+                                                    "energia_prod_kWh": {
+                                                        "type": "number",
+                                                        "format": "float",
+                                                        "example": "32300.00"
+                                                    },
+                                                    "potencia_kWp": {
+                                                        "type": "number",
+                                                        "format": "float",
+                                                        "example": "25.84"
+                                                    },
+                                                    "emissions_estalv_KgCo2eq": {
+                                                        "type": "integer",
+                                                        "example": "11628"
+                                                    },
+                                                    "created_at": {
+                                                        "type": "string",
+                                                        "example": "2023-02-23T00:09:16.000000Z"
+                                                    },
+                                                    "updated_at": {
+                                                        "type": "string",
+                                                        "example": "2023-02-23T12:33:45.000000Z"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Plaques"
+                ],
+                "summary": "Registrar la informació d'una placa fotovoltaica",
+                "operationId": "905e10c2e62d81fa829d52e6077c8481",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "": {
+                                        "properties": {
+                                            "latitud": {
+                                                "type": "number",
+                                                "format": "float"
+                                            },
+                                            "longitud": {
+                                                "type": "number",
+                                                "format": "float"
+                                            },
+                                            "nom": {
+                                                "type": "string"
+                                            },
+                                            "tipus_equipament": {
+                                                "type": "string"
+                                            },
+                                            "adreca": {
+                                                "type": "string"
+                                            },
+                                            "nom_barri": {
+                                                "type": "string"
+                                            },
+                                            "energia_prod_kWh": {
+                                                "type": "number",
+                                                "format": "float"
+                                            },
+                                            "potencia_kWp": {
+                                                "type": "number",
+                                                "format": "float"
+                                            },
+                                            "emissions_estalv_KgCo2eq": {
+                                                "type": "integer"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object",
+                                "example": {
+                                    "latitud": "41.38",
+                                    "longitud": "2.15",
+                                    "nom": "IES Ernest Lluch",
+                                    "tipus_equipament": "Educació",
+                                    "adreca": "Carrer de la Diputació, 11-15",
+                                    "nom_barri": "la Nova Esquerra de l'Eixample",
+                                    "energia_prod_kWh": "32300.00",
+                                    "potencia_kWp": "25.84",
+                                    "emissions_estalv_KgCo2eq": "11628"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "CREATED",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "number",
+                                            "example": 1
+                                        },
+                                        "latitud": {
+                                            "type": "number",
+                                            "format": "float",
+                                            "example": "41.38"
+                                        },
+                                        "longitud": {
+                                            "type": "number",
+                                            "format": "float",
+                                            "example": "2.15"
+                                        },
+                                        "nom": {
+                                            "type": "string",
+                                            "example": "IES Ernest Lluch"
+                                        },
+                                        "tipus_equipament": {
+                                            "type": "string",
+                                            "example": "Educació"
+                                        },
+                                        "adreca": {
+                                            "type": "string",
+                                            "example": "Carrer de la Diputació, 11-15"
+                                        },
+                                        "nom_barri": {
+                                            "type": "string",
+                                            "example": "la Nova Esquerra de l'Eixample"
+                                        },
+                                        "energia_prod_kWh": {
+                                            "type": "number",
+                                            "format": "float",
+                                            "example": "32300.00"
+                                        },
+                                        "potencia_kWp": {
+                                            "type": "number",
+                                            "format": "float",
+                                            "example": "25.84"
+                                        },
+                                        "emissions_estalv_KgCo2eq": {
+                                            "type": "integer",
+                                            "example": "11628"
+                                        },
+                                        "created_at": {
+                                            "type": "string",
+                                            "example": "2023-02-23T00:09:16.000000Z"
+                                        },
+                                        "updated_at": {
+                                            "type": "string",
+                                            "example": "2023-02-23T12:33:45.000000Z"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "UNPROCESSABLE CONTENT",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "The latitud field is required."
+                                        },
+                                        "errors": {
+                                            "type": "string",
+                                            "example": "Objecte d'errors"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/plaques/{id}": {
+            "get": {
+                "tags": [
+                    "Plaques"
+                ],
+                "summary": "Mostrar la informació d'una placa fotovoltaica",
+                "operationId": "2d3e73fadc7b3b760d75d50e4ae81799",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "number",
+                                            "example": 1
+                                        },
+                                        "latitud": {
+                                            "type": "number",
+                                            "format": "float",
+                                            "example": "41.41538711399405"
+                                        },
+                                        "longitud": {
+                                            "type": "number",
+                                            "format": "float",
+                                            "example": "2.1028800980567754"
+                                        },
+                                        "nom": {
+                                            "type": "string",
+                                            "example": "Centre Cívic Vázquez Montalbán"
+                                        },
+                                        "tipus_equipament": {
+                                            "type": "string",
+                                            "example": "Centre cívic"
+                                        },
+                                        "adreca": {
+                                            "type": "string",
+                                            "example": "Reis Catòlics, 16-34"
+                                        },
+                                        "nom_barri": {
+                                            "type": "string",
+                                            "example": "Vallvidrera, el Tibidabo i les Planes"
+                                        },
+                                        "energia_prod_kWh": {
+                                            "type": "number",
+                                            "format": "float",
+                                            "example": "28350"
+                                        },
+                                        "potencia_kWp": {
+                                            "type": "number",
+                                            "format": "float",
+                                            "example": "22.68"
+                                        },
+                                        "emissions_estalv_KgCo2eq": {
+                                            "type": "integer",
+                                            "example": "10206"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "NOT FOUND",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "No s'ha pogut mostrar la informació de la placa fotovoltaica"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Plaques"
+                ],
+                "summary": "Actualitzar la informació d'una placa fotovoltaica",
+                "operationId": "18f23ea58b49144771817eb483eae413",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "id": {
+                                            "type": "number",
+                                            "example": 1
+                                        },
+                                        "latitud": {
+                                            "type": "number",
+                                            "format": "float",
+                                            "example": "41.41538711399405"
+                                        },
+                                        "longitud": {
+                                            "type": "number",
+                                            "format": "float",
+                                            "example": "2.1028800980567754"
+                                        },
+                                        "nom": {
+                                            "type": "string",
+                                            "example": "Centre Cívic Vázquez Montalbán"
+                                        },
+                                        "tipus_equipament": {
+                                            "type": "string",
+                                            "example": "Centre cívic"
+                                        },
+                                        "adreca": {
+                                            "type": "string",
+                                            "example": "Reis Catòlics, 16-34"
+                                        },
+                                        "nom_barri": {
+                                            "type": "string",
+                                            "example": "Vallvidrera, el Tibidabo i les Planes"
+                                        },
+                                        "energia_prod_kWh": {
+                                            "type": "number",
+                                            "format": "float",
+                                            "example": "28350"
+                                        },
+                                        "potencia_kWp": {
+                                            "type": "number",
+                                            "format": "float",
+                                            "example": "22.68"
+                                        },
+                                        "emissions_estalv_KgCo2eq": {
+                                            "type": "integer",
+                                            "example": "10206"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "204": {
+                        "description": "Placa fotovoltaica actualitzada correctament"
+                    },
+                    "404": {
+                        "description": "NOT FOUND",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "No s'ha pogut actualitzar la informació de la placa fotovoltaica"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Plaques"
+                ],
+                "summary": "Eliminar una placa fotovoltaica",
+                "operationId": "0da3c0c219b72acb2d1a295273fef1d2",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Placa fotovoltaica eliminat correctament"
+                    },
+                    "404": {
+                        "description": "NOT FOUND",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "No s'ha pogut eliminar la placa fotovoltaica"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/plaquess/{emissions}": {
+            "get": {
+                "tags": [
+                    "Plaques",
+                    "Emissions"
+                ],
+                "summary": "Consulta de barris per les emissions estalviades (només superior al número indicat)",
+                "operationId": "093880a0e7bbdc2fe81dfe928407dbc2",
+                "parameters": [
+                    {
+                        "name": "emissions",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "rows": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "adreca": {
+                                                        "type": "string",
+                                                        "example": "Carrer de la Diputació, 11-15"
+                                                    },
+                                                    "nom_barri": {
+                                                        "type": "string",
+                                                        "example": "la Nova Esquerra de l'Eixample"
+                                                    },
+                                                    "emissions_estalv_KgCo2eq": {
+                                                        "type": "integer",
+                                                        "example": "11628"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
